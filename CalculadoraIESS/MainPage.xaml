@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CalculadoraIESS.MainPage"
+    Title="Calculadora IESS"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#10182F">
+
+    <ScrollView x:Name="FormScroll"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill">
+
+        <Grid Padding="20,16"
+              RowDefinitions="Auto,Auto,Auto"
+              RowSpacing="18"
+              VerticalOptions="Center">
+
+            <!-- ENCABEZADO -->
+            <Grid Grid.Row="0"
+                  ColumnDefinitions="*,60"
+                  ColumnSpacing="12">
+
+                <VerticalStackLayout Spacing="5"
+                                     VerticalOptions="Center">
+
+                    <Label Text="FINANZAS PERSONALES"
+                           FontSize="10"
+                           CharacterSpacing="2"
+                           FontAttributes="Bold"
+                           TextColor="#A5B4FC"/>
+
+                    <Label Text="Calculadora IESS"
+                           FontSize="27"e
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+                    <Label Text="Calcula tu aporte mensual"
+                           FontSize="13"
+                           TextColor="#CBD5E1"/>
+                </VerticalStackLayout>
+
+                <Border Grid.Column="1"eee
+                        HeightRequest="60"
+                        WidthRequest="60"
+                        BackgroundColor="#26365F"
+                        Stroke="#45598F"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 18"
+                        VerticalOptions="Center">
+
+                    <Label Text="✦"
+                           FontSize="32"
+                           TextColor="#A5B4FC"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+
+            <!-- TARJETA PRINCIPAL -->
+            <Border Grid.Row="1"
+                    BackgroundColor="White"
+                    Stroke="White"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 24"
+                    Padding="16">
+
+                <VerticalStackLayout Spacing="13">
+
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="Datos del usuario"
+                               FontSize="19"
+                               FontAttributes="Bold"
+                               TextColor="#172554"
+                               VerticalOptions="Center"/>
+
+                        <Border Grid.Column="1"
+                                BackgroundColor="#EEF2FF"
+                                Stroke="#EEF2FF"
+                                StrokeShape="RoundRectangle 10"
+                                Padding="9,5"
+                                VerticalOptions="Center">
+
+                            <Label Text="9,45 %"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#3155D9"/>
+                        </Border>
+                    </Grid>
+
+                    <!-- NOMBRE Y APELLIDO -->
+                    <Grid ColumnDefinitions="*,*"
+                          ColumnSpacing="10">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Nombre"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#475569"/>
+
+                            <Border x:Name="NombreBox"
+                                    BackgroundColor="#F8FAFC"
+                                    Stroke="#DCE4F0"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 12"
+                                    Padding="8,0">
+
+                                <Entry x:Name="NombreEntry"
+                                       Placeholder="Tu nombre"
+                                       PlaceholderColor="#94A3B8"
+                                       TextColor="#0F172A"
+                                       FontSize="14"
+                                       MaxLength="50"
+                                       ReturnType="Next"
+                                       ClearButtonVisibility="WhileEditing"
+                                       Focused="Campo_Focused"
+                                       Unfocused="Campo_Unfocused"
+                                       Completed="Nombre_Completed"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1"
+                                             Spacing="5">
+                            <Label Text="Apellido"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#475569"/>
+
+                            <Border x:Name="ApellidoBox"
+                                    BackgroundColor="#F8FAFC"
+                                    Stroke="#DCE4F0"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 12"
+                                    Padding="8,0">
+
+                                <Entry x:Name="ApellidoEntry"
+                                       Placeholder="Tu apellido"
+                                       PlaceholderColor="#94A3B8"
+                                       TextColor="#0F172A"
+                                       FontSize="14"
+                                       MaxLength="50"
+                                       ReturnType="Next"
+                                       ClearButtonVisibility="WhileEditing"
+                                       Focused="Campo_Focused"
+                                       Unfocused="Campo_Unfocused"
+                                       Completed="Apellido_Completed"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- EDAD Y SALARIO -->
+                    <Grid ColumnDefinitions="*,*"
+                          ColumnSpacing="10">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Edad"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#475569"/>
+
+                            <Border x:Name="EdadBox"
+                                    BackgroundColor="#F8FAFC"
+                                    Stroke="#DCE4F0"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 12"
+                                    Padding="8,0">
+
+                                <Entry x:Name="EdadEntry"
+                                       Placeholder="Tus años"
+                                       PlaceholderColor="#94A3B8"
+                                       TextColor="#0F172A"
+                                       FontSize="14"
+                                       MaxLength="3"
+                                       Keyboard="Numeric"
+                                       ReturnType="Next"
+                                       Focused="Campo_Focused"
+                                       Unfocused="Campo_Unfocused"
+                                       Completed="Edad_Completed"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1"
+                                             Spacing="5">
+                            <Label Text="Salario mensual"
+                                   FontSize="12"
+                                   FontAttributes="Bold"
+                                   TextColor="#475569"/>
+
+                            <Border x:Name="SalarioBox"
+                                    BackgroundColor="#F8FAFC"
+                                    Stroke="#DCE4F0"
+                                    StrokeThickness="1"
+                                    StrokeShape="RoundRectangle 12"
+                                    Padding="8,0">
+
+                                <Entry x:Name="SalarioEntry"
+                                       Placeholder="$ 0.00"
+                                       PlaceholderColor="#94A3B8"
+                                       TextColor="#0F172A"
+                                       FontSize="14"
+                                       Keyboard="Numeric"
+                                       ReturnType="Done"
+                                       Focused="Campo_Focused"
+                                       Unfocused="Campo_Unfocused"
+                                       Completed="Salario_Completed"
+                                       BackgroundColor="Transparent"/>
+                            </Border>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- BOTÓN PRINCIPAL -->
+                    <Button
+                        Text="Calcular mi aporte   →"
+                        Clicked="CalcularAporte_Clicked"
+                        BackgroundColor="#3155D9"
+                        TextColor="White"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        CornerRadius="13"
+                        HeightRequest="50"
+                        Margin="0,3,0,0"/>
+
+                    <Label Text="Cálculo estimado sobre el salario ingresado."
+                           FontSize="10"
+                           TextColor="#64748B"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- PIE DE PÁGINA -->
+            <VerticalStackLayout Grid.Row="2"
+                                 Spacing="4"
+                                 HorizontalOptions="Center">
+
+                <Label Text="SIMPLE  •  RÁPIDO  •  CLARO"
+                       FontSize="10"
+                       CharacterSpacing="1"
+                       FontAttributes="Bold"
+                       TextColor="#A5B4FC"
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="Calculadora educativa · Ecuador"
+                       FontSize="10"
+                       TextColor="#CBD5E1"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
+e
